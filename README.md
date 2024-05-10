@@ -74,3 +74,6 @@ A simple Sui Move version AMM Dex based on the logic of UniswapV2.
 
 15. swap_b_for_a_with_coin_and_transfer_to_sender<A, B>
 + Input with `Pool<A, B>`, `Coin<B>` and minimal A output amount, and transfer `Coin<A>` to sender in the function.
+
+## Unit test
+![](<unit test.png>)
