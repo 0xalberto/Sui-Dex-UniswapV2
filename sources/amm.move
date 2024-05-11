@@ -23,7 +23,7 @@ module amm::uniswapV2 {
 
     /* === constants === */
 
-    const LP_FEE_BASE: u64 = 10000;
+    const LP_FEE_BASE: u64 = 10_000;
 
     /* === math === */
 
@@ -158,10 +158,8 @@ module amm::uniswapV2 {
         };
 
         if (len_a == len_b) {
-            return 1
-        };
-
-        return if (len_a < len_b) {
+            1
+        } else if (len_a < len_b) {
             0
         } else {
             2
@@ -200,7 +198,7 @@ module amm::uniswapV2 {
             pool_id: object::id(&pool),
             a: type_name::get<A>(),
             b: type_name::get<B>(),
-            init_a: balance::value(&pool.balance_a), // test error?
+            init_a: balance::value(&pool.balance_a),
             init_b: balance::value(&pool.balance_b),
             lp_minted: lp_amount,
         });
